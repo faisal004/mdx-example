@@ -18,7 +18,7 @@ export default async function Blog({ params }: { params: any }) {
               {blog.title}
             </h1>
           </div>
-          <div>
+          <div className='prose prose-headings:text-white prose-p:text-white'>
             <Mdx code={blog.body.code} />
           </div>
         </div>
