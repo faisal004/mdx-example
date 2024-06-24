@@ -1,19 +1,23 @@
 
 import { useMDXComponent } from "next-contentlayer/hooks";
+import { Callout } from "./components/Callout";
 
 
-
-
-interface MdxProps {
-  code: string;
+const components={
+  Callout
 }
 
-export function Mdx({ code }: MdxProps) {
+interface MdxProps {
+  code: string,
+
+}
+
+export function Mdx({ code}: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
     <div className="mdx">
-        <Component />
+        <Component  components={components}/>
  
     </div>
   );
