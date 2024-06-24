@@ -1,4 +1,6 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
 
 const Blog = defineDocumentType(() => ({
     name: "Blog",
@@ -13,5 +15,9 @@ const Blog = defineDocumentType(() => ({
 
 export default makeSource({
     contentDirPath: "content",
-    documentTypes: [Blog]
+    documentTypes: [Blog],
+    mdx: {
+        // @ts-ignore
+        rehypePlugins: [rehypeSlug, [rehypePrettyCode, { theme: "github-dark" }]]
+    }
 })

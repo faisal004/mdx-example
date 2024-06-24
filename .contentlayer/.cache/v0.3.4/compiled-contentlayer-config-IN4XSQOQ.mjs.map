@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../contentlayer.config.ts"],
+  "sourcesContent": ["import { defineDocumentType, makeSource } from \"contentlayer/source-files\";\r\nimport rehypePrettyCode from \"rehype-pretty-code\";\r\nimport rehypeSlug from \"rehype-slug\";\r\n\r\nconst Blog = defineDocumentType(() => ({\r\n    name: \"Blog\",\r\n    filePathPattern: `blog/**/*.mdx`,\r\n    contentType: 'mdx',\r\n    fields: {\r\n        title: { type: \"string\", required: true },\r\n        date: { type: \"string\", required: true },\r\n\r\n    },\r\n}));\r\n\r\nexport default makeSource({\r\n    contentDirPath: \"content\",\r\n    documentTypes: [Blog],\r\n    mdx: {\r\n        // @ts-ignore\r\n        rehypePlugins: [rehypeSlug, [rehypePrettyCode, { theme: \"github-dark\" }]]\r\n    }\r\n})"],
+  "mappings": ";AAAA,SAAS,oBAAoB,kBAAkB;AAC/C,OAAO,sBAAsB;AAC7B,OAAO,gBAAgB;AAEvB,IAAM,OAAO,mBAAmB,OAAO;AAAA,EACnC,MAAM;AAAA,EACN,iBAAiB;AAAA,EACjB,aAAa;AAAA,EACb,QAAQ;AAAA,IACJ,OAAO,EAAE,MAAM,UAAU,UAAU,KAAK;AAAA,IACxC,MAAM,EAAE,MAAM,UAAU,UAAU,KAAK;AAAA,EAE3C;AACJ,EAAE;AAEF,IAAO,8BAAQ,WAAW;AAAA,EACtB,gBAAgB;AAAA,EAChB,eAAe,CAAC,IAAI;AAAA,EACpB,KAAK;AAAA;AAAA,IAED,eAAe,CAAC,YAAY,CAAC,kBAAkB,EAAE,OAAO,cAAc,CAAC,CAAC;AAAA,EAC5E;AACJ,CAAC;",
+  "names": []
+}
